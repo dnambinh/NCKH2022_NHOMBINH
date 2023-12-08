@@ -1,0 +1,219 @@
+version: "3.0"
+
+nlu:
+- intent: xin_chao
+  examples: |
+    - Xin chào anh/chị
+    - Chào bạn
+    - Buổi sáng tốt lành
+    - Buổi sáng vui vẻ
+    - Một ngày tốt lành
+    - Xin chào
+    - Rất vui được gặp bạn
+    - Chào
+    - Chào anh
+    - Chào chị
+    - Chào cậu
+    - Halo
+    - Hi
+    - Hello
+
+- intent: tam_biet
+  examples: |
+    - Tạm biệt
+    - Hẹn gặp lại
+    - Hẹn gặp bạn vào lần sau
+    - Bye
+    - Tôi đi đây
+
+- intent: hoi_suc_khoe
+  examples: |
+    - Bạn có khỏe không
+    - Chào, bạn có khỏe không
+    - Xin chào, dạo này ổn chứ
+    - Dạo này bạn khỏe chứ
+    - Hy vọng bạn vẫn khỏe
+    - Chào, hy vọng bạn vẫn ổn
+
+- intent: hoi_ten
+  examples: |
+    - Tên bạn là gì
+    - Tôi có thể biết tên bạn được không
+    - Tôi có thể gọi bạn là gì
+    - Bạn bè của bạn gọi bạn như thế nào
+    - Bạn là ai
+    - Nói cho tôi tên bạn đi
+    - Bạn là cái gì vậy
+    - Tên bạn
+
+- intent: cam_on
+  examples: |
+    - Cảm ơn
+    - Cảm ơn nha
+    - Ok thanks
+    - Cảm ơn bạn
+    - Cảm ơn nhiều
+    - Hữu ích đấy
+
+- intent: continue
+  examples: |
+    - Câm mồm
+    - Im mồm
+    - Dừng lại đi
+    - Đừng nói nữa
+    - Dừng lại ngay
+    - Không được nói nữa
+    - Cấm nói
+
+- intent: khen
+  examples: |
+    - Giỏi đấy
+    - Bạn giỏi đấy
+    - Thông minh lắm
+    - Giỏi quá
+    - Bạn thật thông minh
+    - Trí tuệ bạn thật tuyệt
+    - Bạn quả là thông minh
+    - Bạn thật giỏi
+    - Thông minh
+    - Giỏi lắm
+    - Khá khen cho bạn
+
+- intent: ke_chuyen
+  examples: |
+    - Tôi đang chán, kể chuyện cho tôi đi
+    - Kể chuyện cho tôi
+    - Tôi muốn nghe một vài câu chuyện
+    - Có câu chuyện nào không
+    - Kể thêm câu chuyện nào đi
+
+- intent: ke_chuyen_cuoi
+  examples: |
+    - Làm trò cười đi
+    - Hề đi
+    - Kể truyện cười đi
+    - Tôi muốn nghe truyện cười
+    - Làm tôi cười đi
+    - Tôi muốn vui vẻ
+    - Có thể kể truyện hài cho tôi được không
+    - Có thể kể truyện cười cho tôi được không
+    - Kể truyện hài đi
+    - Tôi muốn cười
+    - Truyện cười
+    - Có câu chuyện cười nào không
+    - Một vài câu chuyện cười đi
+    - Tôi muốn nghe thêm một vài câu chuyện cười khác
+
+- intent: hat
+  examples: |
+    - Hát đi
+    - Hãy hát
+    - Hát
+    - Tôi muốn nghe một bài hát
+    - Bạn có thể hát không
+    - Bạn biết bài hát nào không
+
+- intent: giup
+  examples: |
+    - Bạn có thể giúp đỡ tôi không
+    - Giúp tôi đi
+    - Tôi muốn giúp đỡ
+    - Giúp
+
+- intent: dong_y
+  examples: |
+    - Vâng
+    - Đồng ý
+    - Tốt
+    - Dĩ nhiên
+    - Đúng vậy
+    - Chính xác
+    - Oke
+    - Ok
+    - Đúng
+    - Chuẩn
+
+- intent: tu_choi
+  examples: |
+    - Không
+    - Không bao giờ
+    - Tôi không nghĩ vậy
+    - Tôi không thích điều đó
+    - Không đời nào
+    - Không hẳn vậy
+    - Không còn
+    - Sai
+    - Không đúng
+
+- intent: is_bot
+  examples: |
+    - Bạn là người máy phải không?
+    - Bạn là người thật phải không
+    - Bạn là người máy hay người thật?
+    - Tôi đang nói chuyện với ai đây?
+    - Cho hỏi bạn là ai?
+    - Cho hỏi tôi đang nói chuyện với ai?
+    - Tôi đang nói chuyện với ai đây?
+
+- intent: dat_lich
+  examples: |
+    - Tôi muốn đặt lịch hẹn
+    - Đặt lịch hẹn
+    - Đặt lịch
+    - Muốn book lịch hẹn
+
+- intent: inform
+  examples: |
+    - Tôi muốn đặt lịch gặp giảng viên [Vũ Văn Đạt](name) vào lúc [chiều nay](time)
+    - Đặt lịch gặp cô [Duyên](name)
+    - Tôi muốn yêu cầu một lịch hẹn với thầy [Tiến](name) vào lúc [12:00 am](time)
+    - Muốn đặt lịch hẹn với giảng viên [Ngô](name) lúc [10:00 am](time)
+    - Làm ơn tạo cuộc gặp mặt thầy [Mạnh Tiến] (name) vào khoảng thời gian [8:00 am](time)
+    - Bạn có thể vui lòng tạo cuộc hẹn với chị [Thạch](name) vào thời gian [7h30 am](time) được không
+    - Bạn có thể vui lòng đặt lịch tư vấn với em [Nga](name) vào khoảng thời gian [4:30 pm](time) được không
+    - Bạn có thể vui lòng lên lịch trình hẹn gặp với thầy [Kiệm](name) bắt đầu từ lúc [6:30 am](time) được không
+    - Bạn có thể tạo cuộc hẹn với anh [Kiên](name) thời gian bắt đầu vào lúc [3:00 pm](time) không
+    - Bạn có thể thiết lập cuộc hẹn gặp với thạc sĩ [Yến](name) vào lúc [2:00 pm](time) không
+    - Tôi muốn đặt cuộc gặp với chuyên viên [Thiết](name) lúc [6 giờ chiều](time)
+    - Bạn sẽ tạo một gặp mặt với chị [Huyền](name) lúc [6h sáng](time)
+    - Muốn yêu cầu một hẹn gặp với tiến sĩ [Hà Duyên](name) vào thời gian [3:00 pm](time)
+    - Vui lòng yêu cầu một cuộc hẹn với chuyên viên [Mạnh Tiến](name) vào thời gian [5:00 am](time)
+    - Bạn có thể vui lòng yêu cầu một cuộc hẹn với bác [Thứ](name) vào thời gian [5:00 am](time)
+    - Tôi muốn đặt lịch gặp anh [Bộ](name) vào lúc [chiều nay](time)
+    - Đặt lịch gặp chị [Hà](name)
+    - [7 giờ sáng](time)
+    - Tiến sĩ [Minh Đức](name) vào [ngày 11 tháng 6 năm 2022](time)
+    - Xin vui lòng làm một cuộc tư vấn với anh [Biển](name) vào thời gian [5 giờ chiều, ngày 8 tháng 6 năm 2022](time)
+    - Bạn có thể thiết lập một cuộc hẹn với chị [Kim](name) vào [7/6/2022](time) được không
+    - Muốn làm quen với chị [Nguyệt] vào thời gian [5 giờ chiều nay](time)
+    - Bạn có thể hẹn gặp cô [Duyên](name) và lúc [6h sáng](time) được không
+    - Tôi muốn đặt lịch gặp anh [Châu](name) vào lúc [ngày mai](time)
+    - Đặt lịch gặp chị [Thu Hà](name) vào [ngày 11 tháng 6 năm 2022](time)
+    - Tôi muốn yêu cầu một lịch hẹn với thầy [Nguyễn Tiết Kiệm](name) vào lúc [12h30p20s am](time)
+    - Muốn đặt lịch hẹn với cô [Bùi Thu Hà](name) lúc [7h am](time)
+    - Làm ơn tạo cuộc gặp mặt chú [Như Phong](name) vào khoảng thời gian [8:00 chiều](time)
+    - Bạn có thể vui lòng tạo cuộc hẹn với anh [Nam](name) vào thời gian [6 giờ 7 phút sáng](time) được không
+    - Bạn có thể vui lòng đặt lịch tư vấn với bác [Thanh](name) sau [35 phút](time) nữa được không
+    - Bạn có thể vui lòng lên lịch trình hẹn gặp với thầy [Nhã](name) bắt đầu từ lúc [trưa](time) được không
+    - Bạn có thể tạo cuộc hẹn với chị [Ngọc](name) thời gian [Ngày 7/8/2022](time) không
+    - Bạn có thể thiết lập cuộc hẹn gặp với bạn [Lam](name) vào lúc [8h tối](time) không
+    - Tôi muốn đặt cuộc gặp với bạn [Thiện](name) vào [ngày 1-3-2022](time)
+    - Bạn sẽ tạo một gặp mặt với cô [Thu Hà](name) lúc [6h34 sáng](time)
+    - Muốn yêu cầu một hẹn gặp với chị [Phượng](name) vào thời gian [3:00 pm](time)
+    - Vui lòng yêu cầu một cuộc hẹn với anh [Mạnh](name) vào thời gian [sáng 8 giờ](time)
+    - Bạn có thể vui lòng yêu cầu một cuộc hẹn với bạn [Tiến Đạt](name) vào thời gian [ngày 8 tháng 6 năm 2022 lúc 7 giờ sáng](time)
+    - Tôi muốn đặt lịch gặp bạn [Ngô](name) vào lúc [chiều nay ngày 4-5-2022](time)
+    - Đặt lịch gặp bác [Nga](name) vào thời gian [tối ngày 6 tháng 5 năm 2022](time)
+    - [Ngày 1:2:2022 lúc 3h sáng](time)
+    - Thầy [Quang](name) vào [ngày 11 tháng 6 năm 2022](time)
+    - Xin vui lòng làm một cuộc tư vấn với Cô [Hạnh](name) vào thời gian [4 giờ chiều, ngày 8 tháng 6 năm 2022](time)
+    - Bạn có thể thiết lập một cuộc hẹn với chị [Kim](name) vào [7 giờ tối ngày 7/6/2022](time) được không
+    - Muốn làm quen với anh [Long](name) vào thời gian [5 giờ chiều nay](time)
+    - Bạn có thể hẹn gặp cô [Duyên](name) và lúc [6h sáng hôm nay](time) được không
+    - Gặp thầy [Tiến](name)
+    - Gặp cô [Hòa](name)
+    - Lúc [9/7/2023](time)
+
+- intent: reset
+  examples: |
+    - reset

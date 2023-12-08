@@ -1,0 +1,89 @@
+version: "3.0"
+
+rules:
+
+- rule: xin_chao
+  steps:
+  - intent: xin_chao
+  - action: utter_xin_chao
+
+- rule: tam_biet
+  steps:
+  - intent: tam_biet
+  - action: utter_tam_biet
+
+- rule: hoi_suc_khoe
+  steps:
+  - intent: hoi_suc_khoe
+  - action: utter_hoi_suc_khoe
+
+- rule: hoi_suc_khoe
+  steps:
+  - intent: hoi_suc_khoe
+  - action: utter_hoi_suc_khoe
+
+- rule: cam_on
+  steps:
+  - intent: cam_on
+  - action: utter_cam_on
+
+- rule: khen
+  steps:
+  - intent: khen
+  - action: utter_khen
+
+- rule: ke_chuyen
+  steps:
+  - intent: ke_chuyen
+  - action: utter_ke_chuyen
+
+- rule: ke_chuyen_cuoi
+  steps:
+  - intent: ke_chuyen_cuoi
+  - action: utter_ke_chuyen_cuoi
+
+- rule: hat
+  steps:
+  - intent: hat
+  - action: utter_hat
+
+- rule: giup
+  steps:
+  - intent: giup
+  - action: utter_giup
+
+- rule: giup
+  steps:
+  - intent: giup
+  - action: utter_giup
+
+- rule: reset
+  steps:
+  - intent: reset
+  - action: action_reset_slot
+
+- rule: Activate dat_lich Form
+  steps:
+  - intent: dat_lich
+  - action: dat_lich_form
+  - active_loop: dat_lich_form
+
+- rule: Submit dat_lich Form
+  condition:
+  - active_loop: dat_lich_form
+  steps:
+  - action: dat_lich_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_dat_lich_slots
+
+- rule: Interruption in dat_lich Form
+  condition:
+  - active_loop: dat_lich_form
+  steps:
+  - intent: is_bot
+  - action: utter_is_bot
+  - action: dat_lich_form
+  - active_loop: dat_lich_form

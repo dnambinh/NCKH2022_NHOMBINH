@@ -1,0 +1,6 @@
+rasa
+underthesea
+pycountry
+dateparser
+boto3
+rasa_nlu_examples @ git+https://github.com/RasaHQ/rasa-nlu-examples.git

@@ -1,0 +1,150 @@
+version: "3.0"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+entities:
+- name
+- time
+- support
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: name
+      # conditions:
+      # - active_loop: dat_lich_form
+      #   requested_slot: name
+  time:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: time
+      # conditions:
+      # - active_loop: dat_lich_form
+      #   requested_slot: time
+  support:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      value: true
+      intent: dong_y
+    - type: from_intent
+      value: false
+      intent: tu_choi
+
+forms:
+  dat_lich_form:
+    required_slots:
+    - name
+    - time
+    - support
+
+intents:
+- xin_chao:
+    use_entities: true
+- tam_biet:
+    use_entities: true
+- hoi_suc_khoe:
+    use_entities: true
+- hoi_ten:
+    use_entities: true
+- cam_on:
+    use_entities: true
+- continue:
+    use_entities: true
+- khen:
+    use_entities: true
+- ke_chuyen:
+    use_entities: true
+- ke_chuyen_cuoi:
+    use_entities: true
+- hat:
+    use_entities: true
+- giup:
+    use_entities: true
+- dong_y:
+    use_entities: true
+- tu_choi:
+    use_entities: true
+- is_bot:
+    use_entities: true
+- dat_lich:
+    use_entities: true
+- inform:
+    use_entities: true
+- reset:
+    use_entities: []
+
+responses:
+  utter_xin_chao:
+  - text: 'Chào bạn'
+  utter_tam_biet:
+  - text: 'Hẹn gặp lại bạn'
+  utter_hoi_suc_khoe:
+  - text: 'Tôi vẫn khỏe, cảm ơn bạn'
+  utter_hoi_ten:
+  - text: 'Tôi không có tên và được tạo bởi Rasa'
+  utter_cam_on:
+  - text: 'Không có gì đâu bạn'
+  utter_khen:
+  - text: 'Cảm ơn bạn nhiều'
+  utter_ke_chuyen:
+  - text: 'Có một con gà nhỏ đang tìm cách phá vỏ trứng để chui ra, nó chần chừ e ngại thò đầu ra ngoài ngó nghiêng xem xét sự đời. Đúng lúc đó, 1 con rùa đi ngang qua, gánh trên mình chiếc mai nặng nề. Thấy thế, con gà nhỏ quyết định rời bỏ cái vỏ trứng ngay lập tức'
+  utter_ke_chuyen_cuoi:
+  - text: 'Hôm nay, một người đàn ông gõ cửa nhà tôi và yêu cầu đóng góp cho hồ bơi của xóm. Tôi đưa anh ta một cốc nước'
+  utter_hat:
+  - text: 'Mùng tám tháng ba, em ra thăm vườn, cầm một bông hoa xinh tươi tặng cô giáo'
+  utter_giup:
+  - text: 'Tôi có thể giúp gì bạn'
+  utter_is_bot:
+  - text: 'Tôi là chatbot mục đích đặt lịch hẹn được tạo bởi Rasa'
+  utter_ask_name:
+  - text: 'Anh/Chị muốn hẹn gặp ai?'
+  utter_ask_time:
+  - text: 'Anh/Chị muốn gặp {name} vào thời gian nào?'
+  utter_ask_support:
+  - text: 'Đặt lịch hẹn {name} vào {time}.Thông tin trên đã đúng chưa ạ?'
+    buttons:
+    - title: 'Đúng'
+      payload: '/dong_y'
+    - title: 'Sai'
+      payload: '/tu_choi'
+  utter_ask_continue:
+  - text: 'Bạn có muốn dừng việc đặt lịch lại?'
+    buttons:
+    - title: 'Có'
+      payload: '/dong_y'
+    - title: 'Không'
+      payload: '/tu_choi'
+  utter_submit:
+  - text: 'Oke cảm ơn anh/chị đã sử dụng dịch vụ'
+  utter_dat_lich_slots:
+  - text: 'Bạn đã đặt lịch thành công với {name} vào {time}'
+
+actions:
+- utter_ask_name
+- utter_ask_time
+- utter_ask_support
+- utter_ask_continue
+- utter_xin_chao
+- utter_tam_biet
+- utter_hoi_suc_khoe
+- utter_hoi_ten
+- utter_cam_on
+- utter_khen
+- utter_ke_chuyen
+- utter_ke_chuyen_cuoi
+- utter_hat
+- utter_giup
+- utter_is_bot
+- validate_dat_lich_form
+- utter_submit
+- utter_dat_lich_slots
+- action_reset_slot

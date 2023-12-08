@@ -1,0 +1,119 @@
+version: "3.0"
+
+stories:
+
+- story: happy path 1
+  steps:
+  - intent: dat_lich
+  - action: dat_lich_form
+  - active_loop: dat_lich_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Ngô Mạnh Tiến
+  - slot_was_set:
+    - name: Ngô Mạnh Tiến
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 22/7/2022
+  - slot_was_set:
+    - time: null
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 22/7/2022
+  - slot_was_set:
+    - time: 22/7/2022
+  - slot_was_set:
+    - requested_slot: support
+  - slot_was_set:
+    - time: có
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_dat_lich_slots
+  - intent: tam_biet
+  - action: utter_tam_biet
+
+- story: happy path 2
+  steps:
+  - intent: dat_lich
+  - action: dat_lich_form
+  - active_loop: dat_lich_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Ngô Mạnh Tiến
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: 22/7/2022
+  - slot_was_set:
+    - requested_slot: support
+  - slot_was_set:
+    - time: có
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_dat_lich_slots
+  - intent: tam_biet
+  - action: utter_tam_biet
+
+- story: unhappy path 1
+  steps:
+  - intent: dat_lich
+  - action: dat_lich_form
+  - active_loop: dat_lich_form
+  - intent: continue
+  - action: utter_ask_continue
+  - or: 
+    - intent: dung_lai
+    - intent: dong_y
+  - action: action_deactivate_loop
+  - active_loop: null
+
+- story: unhappy path 2
+  steps:
+  - intent: dat_lich
+  - action: dat_lich_form
+  - active_loop: dat_lich_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Ngô Mạnh Tiến
+  - slot_was_set:
+    - requested_slot: time
+  - intent: continue
+  - action: utter_ask_continue
+  - intent: continue
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - intent: tam_biet
+  - action: utter_tam_biet
+
+- story: unhappy path 3
+  steps:
+  - intent: dat_lich
+  - action: dat_lich_form
+  - active_loop: dat_lich_form
+  - slot_was_set:
+    - requested_slot: name
+  - intent: is_bot
+  - action: utter_is_bot
+  - action: dat_lich_form
+  - slot_was_set:
+    - requested_slot: name
+  - intent: continue
+  - action: utter_ask_continue
+  - intent: dong_y
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - intent: tam_biet
+  - action: utter_tam_biet
